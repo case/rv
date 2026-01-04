@@ -19,7 +19,7 @@ fn install_real_ruby(test: &mut RvTest, ruby_version: &str) {
 fn test_clean_install_download_test_gem() {
     let mut test = RvTest::new();
 
-    install_real_ruby(&mut test, "4.0.0");
+    install_real_ruby(&mut test, "3.3.0");
 
     // Now we can use rv ci.
     test.use_gemfile("../rv-lockfile/tests/inputs/Gemfile.testsource");
@@ -44,7 +44,7 @@ fn test_clean_install_download_test_gem() {
 #[test]
 fn test_clean_install_native_macos_aarch64() {
     let mut test = RvTest::new();
-    install_real_ruby(&mut test, "4.0.0");
+    install_real_ruby(&mut test, "3.3.0");
     test.use_gemfile("../rv-lockfile/tests/inputs/Gemfile.testwithnative");
     test.use_lockfile("../rv-lockfile/tests/inputs/Gemfile.testwithnative.lock");
     let output = test.rv(&["ci", "--skip-compile-extensions"]);
@@ -59,7 +59,7 @@ fn test_clean_install_native_macos_aarch64() {
 #[test]
 fn test_clean_install_native_linux_x86_64() {
     let mut test = RvTest::new();
-    install_real_ruby(&mut test, "4.0.0");
+    install_real_ruby(&mut test, "3.3.0");
     test.use_gemfile("../rv-lockfile/tests/inputs/Gemfile.testwithnative");
     test.use_lockfile("../rv-lockfile/tests/inputs/Gemfile.testwithnative.lock");
     let output = test.rv(&["ci", "--skip-compile-extensions"]);
@@ -73,7 +73,7 @@ fn test_clean_install_native_linux_x86_64() {
 #[test]
 fn test_clean_install_download_faker() {
     let mut test = RvTest::new();
-    install_real_ruby(&mut test, "4.0.0");
+    install_real_ruby(&mut test, "3.3.0");
     // https://github.com/faker-ruby/faker/blob/2f8b18b112fb3b7d2750321a8e574518cfac0d53/Gemfile
     test.use_gemfile("../rv-lockfile/tests/inputs/Gemfile.faker");
     // https://github.com/faker-ruby/faker/blob/2f8b18b112fb3b7d2750321a8e574518cfac0d53/Gemfile.lock
